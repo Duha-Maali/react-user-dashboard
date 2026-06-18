@@ -1,0 +1,36 @@
+.btn {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 23px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+  letter-spacing: 0.2px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  background: var(--purple-deep);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  opacity: 0.88;
+}
+
+.btn--danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.btn--danger:hover {
+  background: var(--danger);
+  color: var(--white);
+}
