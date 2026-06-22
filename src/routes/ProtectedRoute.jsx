@@ -1,15 +1,10 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute() {
   const { username } = useAuth();
 
-  if (!username) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return children;
+  return username ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

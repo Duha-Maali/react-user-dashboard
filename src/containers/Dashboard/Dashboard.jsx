@@ -6,7 +6,7 @@ import { fetchUsers } from '../../services/userService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
-import './Dashboard.css';
+import styles from './Dashboard.module.css';
 
 function Dashboard() {
   const [users, setUsers] = useState([]);
@@ -23,16 +23,16 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="dashboard">
-      <div className="dashboard__container">
+    <div className={styles.dashboard}>
+      <div className={styles.dashboard__container}>
 
-        <div className="dashboard__nav">
-          <div className="dashboard__nav-left">
+        <div className={styles.dashboard__nav}>
+          <div className={styles['dashboard__nav-left']}>
             <FontAwesomeIcon icon={faTableCellsLarge} />
-            <span className="dashboard__nav-title">Dashboard</span>
+            <span className={styles['dashboard__nav-title']}>Dashboard</span>
           </div>
           <button
-            className="dashboard__profile-btn"
+            className={styles['dashboard__profile-btn']}
             onClick={() => navigate('/profile')}
           >
             <FontAwesomeIcon icon={faUser} />
@@ -40,29 +40,29 @@ function Dashboard() {
           </button>
         </div>
 
-        <div className="dashboard__body">
-          <div className="dashboard__header">
-            <h2 className="dashboard__heading">Users</h2>
-            <p className="dashboard__subheading">
+        <div className={styles.dashboard__body}>
+          <div className={styles.dashboard__header}>
+            <h2 className={styles.dashboard__heading}>Users</h2>
+            <p className={styles.dashboard__subheading}>
               Welcome back, <strong>{username}</strong>
             </p>
           </div>
 
           {loading && (
-            <div className="dashboard__state">
-              <div className="dashboard__spinner" />
-              <p className="dashboard__state-text">Loading users...</p>
+            <div className={styles.dashboard__state}>
+              <div className={styles.dashboard__spinner} />
+              <p className={styles['dashboard__state-text']}>Loading users...</p>
             </div>
           )}
 
           {error && (
-            <div className="dashboard__state dashboard__state--error">
+            <div className={`${styles.dashboard__state} ${styles['dashboard__state--error']}`}>
               <p>{error}</p>
             </div>
           )}
 
           {!loading && !error && (
-            <div className="dashboard__list">
+            <div className={styles.dashboard__list}>
               {users.map((user) => (
                 <UserCard key={user.id} user={user} />
               ))}

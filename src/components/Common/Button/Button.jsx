@@ -1,10 +1,9 @@
-import React from 'react';
-import './Button.css';
+import styles from './Button.module.css';
 
 function Button({ label, onClick, variant = 'primary', type = 'button' }) {
   return (
     <button
-      className={`btn btn--${variant}`}
+      className={`${styles.btn} ${styles[`btn--${variant}`]}`}
       onClick={onClick}
       type={type}
     >

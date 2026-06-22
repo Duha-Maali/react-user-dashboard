@@ -1,15 +1,15 @@
 import { forwardRef } from 'react';
-import './InputField.css';
+import styles from './InputField.module.css';
 
 const InputField = forwardRef(function InputField(
   { value, onChange, placeholder, type = 'text' },
   ref
 ) {
   return (
-    <div className="input-wrapper">
+    <div className={styles['input-wrapper']}>
       <input
         ref={ref}
-        className="input-field"
+        className={styles['input-field']}
         type={type}
         value={value}
         onChange={onChange}

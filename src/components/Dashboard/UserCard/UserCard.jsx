@@ -1,4 +1,4 @@
-import './UserCard.css';
+import styles from './UserCard.module.css';
 
 function getInitials(name) {
   return name
@@ -10,15 +10,15 @@ function getInitials(name) {
 
 function UserCard({ user }) {
   return (
-    <div className="user-card">
-      <div className="user-card__avatar">
+    <div className={styles['user-card']}>
+      <div className={styles['user-card__avatar']}>
         {getInitials(user.name)}
       </div>
-      <div className="user-card__info">
-        <p className="user-card__name">{user.name}</p>
-        <p className="user-card__email">{user.email}</p>
+      <div className={styles['user-card__info']}>
+        <p className={styles['user-card__name']}>{user.name}</p>
+        <p className={styles['user-card__email']}>{user.email}</p>
       </div>
-      <p className="user-card__city">{user.address.city}</p>
+      <p className={styles['user-card__city']}>{user.address.city}</p>
     </div>
   );
 }

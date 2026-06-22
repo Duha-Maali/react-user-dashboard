@@ -5,7 +5,7 @@ import InputField from '../../components/Login/InputField/InputField';
 import Button from '../../components/Common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import './LoginPage.css';
+import styles from './LoginPage.module.css';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -14,14 +14,12 @@ function LoginPage() {
   const { login, username: loggedInUser } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect if already logged in
   useEffect(() => {
     if (loggedInUser) {
       navigate('/dashboard');
     }
   }, [loggedInUser, navigate]);
 
-  // Auto-focus input on mount via useRef
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
@@ -36,23 +34,23 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <div className="login-card__icon">
+    <div className={styles['login-page']}>
+      <div className={styles['login-card']}>
+        <div className={styles['login-card__icon']}>
           <FontAwesomeIcon icon={faUser} />
         </div>
 
-        <h1 className="login-card__title">User login</h1>
-        <p className="login-card__subtitle">Enter your username to continue</p>
+        <h1 className={styles['login-card__title']}>User login</h1>
+        <p className={styles['login-card__subtitle']}>Enter your username to continue</p>
 
-        <div className="login-card__form">
+        <div className={styles['login-card__form']}>
           <InputField
             ref={inputRef}
             value={username}
             onChange={(e) => { setUsername(e.target.value); setError(''); }}
             placeholder="Username"
           />
-          {error && <p className="login-card__error">{error}</p>}
+          {error && <p className={styles['login-card__error']}>{error}</p>}
           <Button label="Login" onClick={handleLogin} variant="primary" />
         </div>
       </div>
