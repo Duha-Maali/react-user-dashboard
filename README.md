@@ -1,16 +1,87 @@
-# React + Vite
+# React User Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React user dashboard developed as part of a frontend internship training task.
 
-Currently, two official plugins are available:
+The application demonstrates simulated user authentication, protected routes, global authentication state, API data fetching, reusable components, and navigation between dashboard and profile pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Log in using a username
+- Preserve the logged-in user using `localStorage`
+- Protect dashboard and profile routes
+- Redirect unauthenticated users to the login page
+- Display users fetched from an external API
+- Handle loading and error states
+- View the logged-in user’s profile
+- Log out and clear the stored authentication state
+- Navigate between dashboard and profile pages
+- Reuse common UI components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Concepts Practiced
 
-## Expanding the ESLint configuration
+- React functional components
+- React Context API
+- Custom hooks
+- `useState`
+- `useEffect`
+- `useRef`
+- React Router
+- Nested and protected routes
+- `Outlet` and `Navigate`
+- Programmatic navigation
+- API requests with Axios
+- Loading and error state handling
+- `localStorage`
+- Component composition
+- CSS Modules
+- Separation of components, containers, routes, and services
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+
+- React
+- JavaScript
+- Vite
+- React Router
+- Axios
+- Context API
+- Font Awesome
+- CSS Modules
+- JSONPlaceholder API
+
+## Authentication Note
+
+Authentication in this project is simulated for frontend training purposes.
+
+The application stores the entered username in `localStorage` and uses it to control access to protected routes. It does not connect to a backend authentication service and should not be considered production-ready authentication.
+
+## How to Run
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Duha-Maali/react-user-dashboard.git
+   ```
+
+2. Open the project directory:
+
+   ```bash
+   cd react-user-dashboard
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in the terminal.
+
+## Project Context
+
+This repository was created as a frontend internship training task to practice React Router, protected routes, Context API, custom hooks, API integration, reusable components, and authentication-state handling.
